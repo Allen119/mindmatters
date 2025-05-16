@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rajisha V</title>
+    <meta name="description" content="Professional online psychological counseling services by Rajisha V">
+    <style>
+        :root {
+            --primary: #5c6bc0;
+            --secondary: #8e24aa;
+            --dark: #303f9f;
+            --light: #e8eaf6;
+            --text: #212121;
+            --text-light: #757575;
+            --background: #ffffff;
+            --accent: #7e57c2;
+            --teal: #5f9ea0;  /* Added teal color to match the logo */
+            --dark-teal: #2a8a8f; /* Darker teal for hover states */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--teal), var(--dark-teal));
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .logo-container {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 0.5rem;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .navbar {
+            background-color: var(--dark-teal);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--light);
+        }
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--teal);
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--dark-teal);
+            margin: 0.5rem auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-teal);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .credentials {
+            flex: 1;
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .credential-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .credential-title {
+            font-weight: bold;
+            color: var(--dark-teal);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background-color: var(--teal);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--dark-teal);
+        }
+        
+        .contact-info {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-icon {
+            margin-right: 1rem;
+            font-size: 1.25rem;
+            color: var(--teal);
+        }
+        
+        footer {
+            background-color: var(--dark-teal);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--light);
+        }
+        
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-card {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .benefit-icon {
+            font-size: 2rem;
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-content {
+                flex-direction: row;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="profile-section">
+                <div class="logo-container">
+                    <div class="logo">
+                        <div class="face-outline"></div>
+                        <div class="psi">ψ</div>
+                        <div id="dots"></div>
+                    </div>
+                    <div class="text">MIND MATTERS</div>
+                </div>
+               
+               <h2>Rajisha V</h2>
+                <p>Consultant Psychologist</p>
+            </div>
+            <p class="tagline">Professional psychological support anywhere, anytime</p>
+            <div style="margin-top: 1rem; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+                <span style="background-color: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">💻 100% Online</span>
+                <span style="background-color: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">🔒 Secure & Confidential</span>
+                <span style="background-color: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">🌐 Worldwide Service</span>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#benefits" class="nav-link">Benefits</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section id="home">
+        <div class="section-title">Welcome to Mind Matters</div>
+        <p>Thank you for visiting my professional online psychology practice. I offer evidence-based psychological services remotely to help individuals overcome challenges, develop resilience, and achieve personal growth regardless of location. With expertise in various therapeutic approaches and a commitment to compassionate care, I provide a safe and supportive virtual environment for clients to explore their concerns and work towards positive change.</p>
+        <p style="margin-top: 1rem;">Online counseling offers flexibility, accessibility, and comfort while maintaining the same quality of care as in-person sessions. Whether you're seeking support for personal development, struggling with specific mental health concerns, or looking for guidance during life transitions, I'm here to help you navigate your journey with empathy and professional insight from anywhere in the world.</p>
+    </section>
+    
+    <section id="about">
+        <div class="section-title">About Me</div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I am a qualified psychologist with experience in various settings including educational institutions, mental health centers, and community projects. My professional journey has equipped me with versatile skills in providing psychological support across diverse populations.</p>
+                <p style="margin-top: 1rem;">My approach integrates evidence-based therapeutic methods with compassionate understanding of individual needs. I believe in creating a supportive environment where clients feel heard and valued as they work through their challenges.</p>
+                <p style="margin-top: 1rem;">Having worked extensively with students, families, and individuals from various backgrounds, I bring a nuanced understanding of how cultural, social, and personal factors influence mental well-being. My experience with tribal communities through ITDP has further enhanced my ability to provide culturally sensitive psychological support.</p>
+                <p style="margin-top: 1rem;">I am committed to continuous professional development and stay updated with the latest research and practices in psychology to provide the highest quality of care to my clients.</p>
+            </div>
+            
+            <div class="credentials">
+                <h3 style="margin-bottom: 1.5rem; color: var(--teal);">Credentials & Experience</h3>
+                
+                <div class="credential-item">
+                    <div class="credential-title">Education</div>
+                    <p>M.Sc. Psychology - Mahatma Gandhi University</p>
+                    <p>B.Sc. Psychology - University of Calicut</p>
+                </div>
+                
+                <div class="credential-item">
+                    <div class="credential-title">Qualifications</div>
+                    <p>NET (National Eligibility Test) Qualified</p>
+                    <p>SET (State Eligibility Test) Qualified</p>
+                </div>
+                
+                <div class="credential-item">
+                    <div class="credential-title">Professional Experience</div>
+                    <p>2+ years of experience in counseling across government and non-government projects</p>
+                    <p>Expertise in academic counseling, mental health support, and career guidance</p>
+                    <p>Experience working with diverse populations including students, families, and tribal communities</p>
+                </div>
+                
+                <div class="credential-item">
+                    <div class="credential-title">Core Skills</div>
+                    <p>Individual and Group Counseling</p>
+                    <p>Psychological Assessment and Intervention</p>
+                    <p>Academic and Career Guidance</p>
+                    <p>Research and Analysis</p>
+                    <p>Mental Health Awareness Programs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services">
+        <div class="section-title">My Services</div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💬</div>
+                <h3 class="service-title">Online Individual Counseling</h3>
+                <p>Personalized one-on-one video sessions addressing emotional challenges, stress management, anxiety, depression, and personal growth. Our secure virtual platform creates a safe space for exploration and healing through evidence-based therapeutic approaches.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3 class="service-title">Virtual Academic & Career Counseling</h3>
+                <p>Remote guidance for students and professionals facing academic challenges or career transitions. Services include virtual aptitude assessment, goal setting, and developing strategies for academic and professional success.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">👨‍👩‍👧</div>
+                <h3 class="service-title">Online Family & Relationship Counseling</h3>
+                <p>Virtual support for improving family dynamics and interpersonal relationships. I facilitate online sessions to help clients navigate conflicts, enhance communication, and strengthen bonds within relationships.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3 class="service-title">Remote Psychological Assessment</h3>
+                <p>Comprehensive online psychological evaluations to identify strengths, challenges, and develop targeted intervention strategies. Assessments are adapted for digital delivery while maintaining professional standards.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3 class="service-title">Teletherapy Technology Support</h3>
+                <p>Assistance setting up and using online therapy platforms to ensure a smooth counseling experience. I provide guidance on creating a private, comfortable space for productive virtual sessions.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🧘</div>
+                <h3 class="service-title">Digital Wellness Programs</h3>
+                <p>Structured online programs focusing on holistic well-being, resilience building, stress management, and personal development through digital resources, video sessions, and guided practice.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="benefits">
+        <div class="section-title">Benefits of Online Counseling</div>
+        <div class="benefits-container">
+            <div class="benefit-card">
+                <div class="benefit-icon">🏠</div>
+                <h3>Comfort & Convenience</h3>
+                <p>Receive therapy from the comfort of your own home or any private space, eliminating travel time and making it easier to fit sessions into your schedule.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🌐</div>
+                <h3>Accessibility</h3>
+                <p>Access professional psychological support regardless of your location, especially beneficial for those in remote areas or with mobility challenges.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">⏱️</div>
+                <h3>Flexible Scheduling</h3>
+                <p>More appointment options available outside traditional office hours, making it easier to find times that work with your schedule.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🔒</div>
+                <h3>Privacy & Anonymity</h3>
+                <p>Some clients find it easier to open up when not physically present in an office, and you won't risk running into someone you know in a waiting room.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">💻</div>
+                <h3>Technology Integration</h3>
+                <p>Easy sharing of digital resources, worksheets, and tools that can enhance your therapeutic experience between sessions.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <div class="benefit-icon">🌍</div>
+                <h3>Continuity of Care</h3>
+                <p>Maintain your therapeutic relationship even when traveling or relocating, providing consistency in your mental health care.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <div class="section-title">Contact Me</div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 1.5rem; color: var(--teal);">Get In Touch</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div>
+                        <p>Phone: 9207120361</p>
+                        <p>(India, +91 country code)</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <p>Email: rajishapsychologist@gmail.com</p>
+                </div>
+                
+                <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="https://wa.me/919207120361" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <button style="display: flex; align-items: center; gap: 0.5rem; background-color: #25D366;">
+                            📞 WhatsApp
+                        </button>
+                    </a>
+                    <a href="tel:+919207120361" style="text-decoration: none;">
+                        <button style="display: flex; align-items: center; gap: 0.5rem;">
+                            📱 Call Now
+                        </button>
+                    </a>
+                    <a href="mailto:rajishapsychologist@gmail.com" style="text-decoration: none;">
+                        <button style="display: flex; align-items: center; gap: 0.5rem; background-color: #D44638;">
+                            ✉️ Email
+                        </button>
+                    </a>
+                </div>
+
+                <h3 style="margin: 2rem 0 1.5rem; color: var(--teal);">Consultation Hours</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <p>Monday - Friday: 9:00 AM - 7:00 PM IST</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <p>Saturday: 10:00 AM - 4:00 PM IST</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <p>Sunday: By appointment only</p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+    
+    
+    <footer>
+        <div class="footer-content">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                
+                <span style="margin-left: 10px; font-size: 1.5rem;">Mind Matters</span>
+            </div>
+            <p>&copy; 2023 Rajisha V. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://wa.me/919207120361" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    📱
+                </a>
+                <a href="mailto:rajisharithin98@gmail.com" class="social-link" aria-label="Email">
+                    ✉️
+                </a>
+            </div>
+            <p style="font-size: 0.9rem; margin-top: 1rem;">Confidential online psychological counseling services</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8;">Note: In case of emergencies or crisis situations, please contact local emergency services or a crisis hotline in your area.</p>
+        </div>
+    </footer>
+</body>
+</html>
